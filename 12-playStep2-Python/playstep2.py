@@ -6,8 +6,8 @@
 # we'd probably use a random-number generator.
 
 # With that, the function plays step2 of the given hand, using the given dice to get the next rolls
-# as needed. At the end, the function returns the new hand, but it has to be ordered, and the
-# function also returns the resulting dice (which no longer contain the rolls that were just used).
+# as needed. At the end, the function prints the new hand, but it has to be ordered, and the
+# function also prints the resulting dice (which no longer contain the rolls that were just used).
 
 # For example:
 # assert(playstep2(413, 2312) == (421, 23))
@@ -15,7 +15,7 @@
 # matching dice (pair) in 413, so we keep the highest die, which is a 4, and we replace the 1 and the 3
 # with new rolls. Since new rolls come from the right (the one's digit), those are 2 and 1. So the
 # new hand is 421. It has to be sorted, but it already is. Finally, the dice was 2312, but we used 2
-# digits, so now it's just 23. We return the hand and the dice, so we return (421, 23).
+# digits, so now it's just 23. We print the hand and the dice, so we print (421, 23).
 
 # For Example:
 # assert(playstep2(544, 456) == (644, 45))
@@ -33,6 +33,51 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
+def sample(n):
+  c=(len(n)-1)
+  numb=0
+  for i in n:
+    numb=numb+(i*(10**c))  # summing the number by multiplying in each iteration
+    c=c-1                  # updating the exponential value for further iteration
+  return numb
+
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+  temp=[]
+  temp1=[]
+  for i in range(3):
+    temp.append(hand//10**(3-i-1))
+    hand=hand%10**(3-i-1)
+  # print (temp)
+  temp2=set(temp)  # for checking presence of duplicate values in the given hand
+  
+  a=len(str(dice))
+  for i in range(a):
+    temp1.append(dice//10**(a-i-1))
+    dice=dice%10**(a-i-1)
+  # print (temp1)
+  
+  if(len(temp2)==len(temp)):
+    # print ("False")
+    m=[]
+    m.append(max(temp))
+    for j in range(len(temp)-1):
+      m.append(temp1[-1])
+      temp1.pop()
+   
+    m.sort(reverse=True)
+    return (sample(m),sample(temp1))
+  
+  else:
+    m=[]
+    for j in temp:
+      if(temp.count(j)!=1):
+        m.append(j)
+    m.append(temp1[-1])
+    temp1.pop()
+   
+    m.sort(reverse=True)
+    return (sample(m),sample(temp1)) 
+  
+
+
+
