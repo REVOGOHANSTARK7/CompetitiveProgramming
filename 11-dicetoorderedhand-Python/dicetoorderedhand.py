@@ -9,7 +9,19 @@
 # assert(dicetoorderedhand(6,5,6) == 665)
 # assert(dicetoorderedhand(2,2,2) == 222)
 
+def sample(n):
+  c=(len(n)-1)
+  numb=0
+  for i in n:
+    numb=numb+(i*(10**c))  # summing the number by multiplying in each iteration
+    c=c-1                  # updating the exponential value for further iteration
+  return numb
 
 def dicetoorderedhand(a, b, c):
-	# your code goes here
-	pass
+  temp=[a,b,c]
+  temp.sort(reverse=True)
+  return sample(temp)
+  # s=str(temp)
+  # print (s)
+  
+
