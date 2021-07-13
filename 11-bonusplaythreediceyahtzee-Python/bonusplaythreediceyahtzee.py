@@ -40,5 +40,65 @@
 
 
 def bonusplaythreediceyahtzee(dice):
-	# Your code goes here
-	pass
+
+def score(k):
+  empty=[]
+  b=len(str(k))
+  for i in range(b):
+    empty.append(k//10**(b-i-1))
+    k=k%10**(b-i-1)
+  
+  emp2=set(k)
+  if(len(emp2)==len(empty)):
+    c=max(empty)
+    return c
+  elif(len(emp2)+1==len(empty)):
+    
+    
+    
+  
+  
+def sample(n):
+  c=(len(n)-1)
+  numb=0
+  for i in n:
+    numb=numb+(i*(10**c))  # summing the number by multiplying in each iteration
+    c=c-1                  # updating the exponential value for further iteration
+  return numb
+
+def playstep2(hand, dice):
+  temp=[]
+  temp1=[]
+  for i in range(3):
+    temp.append(hand//10**(3-i-1))
+    hand=hand%10**(3-i-1)
+  # print (temp)
+  temp2=set(temp)  # for checking presence of duplicate values in the given hand
+  
+  a=len(str(dice))
+  for i in range(a):
+    temp1.append(dice//10**(a-i-1))
+    dice=dice%10**(a-i-1)
+  # print (temp1)
+  
+  if(len(temp2)==len(temp)):
+    # print ("False")
+    m=[]
+    m.append(max(temp))
+    for j in range(len(temp)-1):
+      m.append(temp1[-1])
+      temp1.pop()
+   
+    m.sort(reverse=True)
+    return (sample(m),sample(temp1))
+  
+  else:
+    m=[]
+    for j in temp:
+      if(temp.count(j)!=1):
+        m.append(j)
+    m.append(temp1[-1])
+    temp1.pop()
+   
+    m.sort(reverse=True)
+    return (sample(m),sample(temp1))
