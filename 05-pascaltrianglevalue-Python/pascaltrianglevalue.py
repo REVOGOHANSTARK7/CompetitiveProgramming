@@ -8,7 +8,7 @@
 import math
 
 def fun_pascaltrianglevalue(row, col):
-  if(row<0 or col<0 or (col>row)):
+  if(row<0 or col<0 or col>row):
     return 0
   else:
     k=math.factorial(row)/(math.factorial(col)*math.factorial(row-col))
