@@ -11,13 +11,13 @@
 # return 0.
 
 def power(x, y):
-    res=1
+    result=1
     while(y>0):
         if((y & 1) == 1) :
-            res=res*x
+            result=result*x
         y=y>>1
         x=x*x
-    return res
+    return result
 
 def powerSum(n, k):
     sum=0
