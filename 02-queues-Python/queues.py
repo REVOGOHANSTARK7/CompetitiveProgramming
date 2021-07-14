@@ -18,6 +18,5 @@ class Queue:
             return self.storage[0]
 
     def dequeue(self):
-        if len(self.storage) != 0:
-            self.storage.pop(0)
-            return self.storage[0]
+        if (len(self.storage)!=0):
+            return self.storage.pop(0)
