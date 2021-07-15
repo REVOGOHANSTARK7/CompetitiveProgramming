@@ -6,7 +6,17 @@
 # is then factored into the new search.
 
 def findzerowithbisection(x, epsilon):
-	# epsilon and step are initialized
-	# don't change these values
-	# epsilon
-	# your code starts here
+  low=0
+  high=x
+  mid=(low+high)/2
+  while(abs(mid**2-x)>=epsilon):
+    if(mid**2<x):
+      low=mid
+    else:
+      high=mid
+    mid=(low+high)/2
+  return mid
+      
+  
+  
+  
