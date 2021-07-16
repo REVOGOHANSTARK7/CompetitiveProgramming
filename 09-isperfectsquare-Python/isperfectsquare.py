@@ -6,13 +6,24 @@
 import math
 
 def isperfectsquare(n):
-  n=int(n)
-  if(type(n)!=type(1)):
-    return False
-  elif(n<0):
-    return False
-  elif(math.sqrt(n)-(math.floor(math.sqrt(n)))==0):
-    return True
+  if(type(n)==type(1) or type(n)==type(1.5)):
+    if(n<0):
+      return False
+    elif(math.sqrt(n)-(math.floor(math.sqrt(n)))==0):
+      return True
+    else:
+      return False
+    
   else:
-    return False
-  
+    if(n.isnumeric()==True):
+      n=int(n)
+      if(n<0):
+        return False
+      elif(math.sqrt(n)-(math.floor(math.sqrt(n)))==0):
+        return True
+      else:
+        return False
+    else:
+      return False
+    
+      
