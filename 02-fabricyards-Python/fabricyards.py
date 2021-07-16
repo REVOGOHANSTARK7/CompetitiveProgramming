@@ -11,11 +11,21 @@
 # fabric that must be purchased (as purchases must be in whole yards).
 # Hint: you may want to use fabricyards, which you just wrote!
 
+# 1 yard = 36 inches
 
-def fabricyards(inches):
-	# Your code goes here...
-	return 1
+def fabricyards(inches): #37
+  if(inches==0):
+    return 0
+  elif(inches%36==0):
+    return inches//36  
+  else:
+    return inches//36+1  #2
 
 def fabricexcess(inches):
-	# Your code goes here...
-	return 1
+  m=fabricyards(inches)
+  if(m==0):
+    return 0
+  else:
+    return (36*m-inches)
+  
+ 
