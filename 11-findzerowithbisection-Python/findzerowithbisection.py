@@ -11,7 +11,7 @@ def findzerowithbisection(x, epsilon):
   # mid=(low+high)/2
   while(True):
     mid=(low+high)/2
-    dif= mid**2-x
+    dif=mid**2-x
     if(abs(dif)<=epsilon):
       break
     elif(dif<0):
