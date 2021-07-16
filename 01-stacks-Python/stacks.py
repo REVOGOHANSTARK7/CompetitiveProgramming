@@ -14,6 +14,7 @@ class Element(object):
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
+        self.next = None
         
     def append(self, new_element):
         current = self.head
@@ -25,8 +26,17 @@ class LinkedList(object):
             self.head = new_element
 
     def insert_first(self, new_element):
-        new_element.next=self.head
-        self.head=new_element
+        current=self.head
+        if(self.head==None):
+            self.head=new_element
+        
+        else:
+            
+            self.head=new_element
+            self.head.next=current
+            
+        # new_element.next=self.head
+        # self.head=new_element
 
     def delete_first(self):
         if(self.head):
@@ -37,23 +47,23 @@ class LinkedList(object):
         else:
             return None
         
-    def search(self,element):
-        # if(self.head==element):
-        #     return True
-        # elif(self.next==element):
-        #     return True
-        current=self.head
-        while(current!=None):
-            if(current==element):
-                return True
-            current=current.next
-        return False
-    
-ll = LinkedList()  
-ll.insert_first(3)
-ll.insert_first(1)
-ll.insert_first(5) 
-assert(ll.search(3)==True)
+#     def search(self,element):
+#         # if(self.head==element):
+#         #     return True
+#         # elif(self.next==element):
+#         #     return True
+#         current=self.head
+#         while(current!=None):
+#             if(current==element):
+#                 return True
+#             current=current.next
+#         return False
+# l=Element(0)  
+# ll=LinkedList(None)  
+# ll.append(3)
+# ll.append(1)
+# ll.append(5) 
+# assert(ll.search(3)==True)
         
         
 
