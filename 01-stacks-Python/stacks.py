@@ -37,6 +37,25 @@ class LinkedList(object):
         else:
             return None
         
+    def search(self,element):
+        # if(self.head==element):
+        #     return True
+        # elif(self.next==element):
+        #     return True
+        current=self.head
+        while(current!=None):
+            if(current==element):
+                return True
+            current=current.next
+        return False
+    
+ll = LinkedList()  
+ll.insert_first(3)
+ll.insert_first(1)
+ll.insert_first(5) 
+assert(ll.search(3)==True)
+        
+        
 
 class stack(object):
     def __init__(self,top=None):
