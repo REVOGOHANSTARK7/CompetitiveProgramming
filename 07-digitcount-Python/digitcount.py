@@ -5,6 +5,21 @@
 # here! This can be solved with logarithms, but seeing as this is "loops week", you should instead simply 
 # repeatedly remove the ones digit until you cannot.
 
+import math
+
 def digitcount(n):
-	# your code goes here
-	pass
+  # if(n==0):
+  #   return 1
+  # elif(n<0):
+  #   return math.floor(math.log(abs(n),10)+1)
+  # elif(n>0):
+  #   return math.floor(math.log(n,10)+1)
+  n=abs(n)
+  count=0
+  if(n==0):
+    return 1
+  while(n>0):
+    n//=10
+    count+=1
+  return count
+    
