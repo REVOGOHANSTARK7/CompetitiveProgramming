@@ -40,6 +40,12 @@ class HashTable(object):
         hash value from a string."""
         
         
+    # def deletion(self,string):
+    #     temp2=self.calculate_hash_value(string)
+    #     if(self.table[temp2]==string):
+    #         self.table[temp2]==None
+            
+
 # ht=HashTable()
 # print(ht.store("he"))
         
