@@ -17,5 +17,19 @@ def fun_kth_occurrences(s, n):
   return (k[l])
   
 # fun_kth_occurrences("hello wooorld",1)
+
+# def evaluate(k):
+#   initial=1/2
+#   sum=0
+#   for i in range(k+1):
+#     sum+=(initial**i)
+#   print(sum)  # n^2
+#   # using bitwise operators helper functions from powersum problem reduces complexity to 'nlogn'.
+#   # to further reduce it to logn , the direct formula of GP can be printed so as to avoid redundancies.
+
+
+# evaluate(3)
+
+    
   
     
