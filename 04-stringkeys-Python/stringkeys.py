@@ -27,7 +27,7 @@ class HashTable(object):
             return self.table.index(string)
         else:
             return -1        
-        """Return the hash value if the
+        """Return the hash value if the\
         string is already in the table.
         Return -1 otherwise."""
         # Your code goes here
