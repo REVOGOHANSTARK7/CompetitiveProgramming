@@ -17,6 +17,25 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
+def sumofsquares(n):
+  sumofsquare=0
+  while(n):
+    sumofsquare=sumofsquare+((n%10)*(n%10))
+    n=int(n/10)
+  return sumofsquare
+
+
 def ishappynumber(n):
-	# your code goes here
-	pass
+  start=n
+  stop=n
+  while(True):
+    start=sumofsquares(start)
+    stop=sumofsquares(sumofsquares(stop))
+    if(start!=stop):
+      continue;
+    else:
+      break;
+  if(start==1):
+    return True
+  else:
+    return False
