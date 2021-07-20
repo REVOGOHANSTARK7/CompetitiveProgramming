@@ -6,8 +6,16 @@
 
 public class MyString {
 	public int vowelCount(String s){
-		// Your code goes here...
-		return 0;
-	}
+	// 	if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+	// 	ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+	// 	{
+	// 		return true;
+	// 	}
+	// 	else
+	// 	{
+	// 		return false;
+	// 	}
+		
+	// }
 	
 }
