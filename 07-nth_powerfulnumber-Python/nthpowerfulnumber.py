@@ -24,7 +24,10 @@ def powerfulprop(x):
         k+=1
       if(k==1):
         return False
-  return(x==1)  
+  return(x==1) 
+
+
+
 
 
   
