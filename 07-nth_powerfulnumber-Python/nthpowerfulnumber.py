@@ -7,10 +7,10 @@
 import math
 
 def prime(n):
-  if(n<2 or n%2==0):
-    return False
-  elif(n==2):
+  if(n==2):
     return True
+  elif(n<2 or n%2==0):
+    return False
   fac=round(math.sqrt(n))
   for i in range(3,fac+1,2):
     if(n%i==0):
@@ -18,17 +18,21 @@ def prime(n):
   return True
 
 def powerfulprop(n):
+  if(n==1):
+    return True
   count=0
   count1=0
-  for i in range(2,n+1):
+  for i in range(2,int(n//2)+1):
     if(n%i==0 and prime(i)):
       count+=1
-      if(n%(i*i)==0):
+      if n%(i*i)==0:
         count1+=1
-  if(count1!=0 and count!=0) and count==count1:
-    return True
-  else:
+  if(count==0 and count1==0):
     return False
+  elif(count==count1):
+      return True
+  return False
+
     
 def nthpowerfulnumber(n):   # n^2
   found=0
@@ -39,16 +43,9 @@ def nthpowerfulnumber(n):   # n^2
       found=found+1
   return got  
 
-# def powerfulprop(x):
-#   fac=round(math.sqrt(x))
-#   for squared in range(2,fac+1,1):
-#       k=0
-#       while(x%squared==0):
-#         x//=squared
-#         k+=1
-#       if(k==1):
-#         return False
-#   return(x==1) 
+print(nthpowerfulnumber(2))
+
+
 
 
 
