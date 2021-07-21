@@ -28,9 +28,9 @@ def ishappynumber(n):
     start=sumofsquares(start)
     stop=sumofsquares(sumofsquares(stop))
     if(start!=stop):
-      continue;
+      continue
     else:
-      break;
+      break
   if(start==1):
     return True
   else:
