@@ -6,5 +6,15 @@
 # the list.
 
 def issorted(a):
-	# your code goes here
-	pass
+  # count=0
+  # for i in range(len(a)):
+  #   if(a[i]<a[i-1]):
+  #     count+=1
+  
+  if(a==sorted(a)):
+    return True
+  elif(a==sorted(a,reverse=True)):
+    return  True
+  else:
+    return False
+      
