@@ -27,10 +27,10 @@ def fun_nth_carolprime(n):
     found=0
     while(found<=n):
         x=(((2**k)-1)**2-2)
-        if(isaprime(x)):
-            found=found+1
+        # if(isaprime(x)):
+        found=found+1
         k=k+1
-    # return x
-    print(x)
+    return x
+#     print(x)
     
-fun_nth_carolprime(3)
+# fun_nth_carolprime(3)
