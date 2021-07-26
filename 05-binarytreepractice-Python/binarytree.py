@@ -26,8 +26,7 @@ class BinaryTree(object):
             if start.value == find_val:
                 return True
             else:
-                return self.preorder_search(start.left, find_val) or \
-                       self.preorder_search(start.right, find_val)
+                return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
         return False
         
         """
