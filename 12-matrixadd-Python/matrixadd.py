@@ -15,19 +15,39 @@
 # None if the two matrices 
 # cannot be added because they are of different dimensions.
 
-def matrixadd(L, M):
-  N=[[0 for i in range(len(L[0]))] for j in range(len(L))]
-  if(len(L)==len(M) and len(L[0])==len(M[0])):
-    for i in range(len(L)):
-      for j in range(len(L[0])):
-        if(len(L[i])!=len(M[i])):
-          return None
-        N[i][j]=L[i][j]+M[i][j]
-        # print(N)
+# def matrixadd(L, M):
+#   N=[[0 for i in range(len(L[0]))] for j in range(len(L))]
+#   if(len(L)==len(M) and len(L[0])==len(M[0])):
+#     for i in range(len(L)):
+#       for j in range(len(L[0])):
+#         if(len(L[i])!=len(M[i])):
+#           return None
+#         N[i][j]=L[i][j]+M[i][j]
+#         # print(N)
        
-    return N
+#     return N
   
-  else:
-    return None
+#   else:
+#     return None
   
-# print(matrixadd([[1,  2,  3],[4,  5,  6]], [[21, 22, 23], [24, 25, 26]]))
+# # print(matrixadd([[1,  2,  3],[4,  5,  6]], [[21, 22, 23], [24, 25, 26]]))
+
+def pattern(n):
+  # k=[[1]*n]*n
+  # k[n-1][n-1]=1
+  k=[]
+  for i in range(n):
+    k.append([0]*n)
+  
+  for i in range(n):
+    k[n-1][i]=1
+    k[i][n-1]=1
+  # k[n-1][n-2]=1
+  # k[n-1][n-3]=1
+  
+  for i in range(n-2,-1,-1):
+    for j in range(n-2,-1,-1):
+      k[i][j]=k[i+1][j]+k[i][j+1]
+  return k
+  
+print(pattern(7))
