@@ -22,14 +22,15 @@
 
 def inverselookandsay(a):
   temp=[]
-  for i in range(len(a)):
-    (temp.append(a[i][2]))*a[i][1]
+  if(len(a[0])==0):
+    return []
+  else:
+    for i in range(len(a)):
+      s=a[i][0]
+      for j in range(s):
+        temp.append(a[i][1])
   return temp
 
-print(inverselookandsay([(3,1)]))
-  
-  
-  
 def lookAndSay(a):
   leng=len(a)
   if(leng==0):
