@@ -10,10 +10,20 @@
 
 
 def fun_getaverage(s):
-  k=len(s)
-  sum=0
-  p=list(s)
-  return p
+  sum=0.0
+  count=0
+  counte=0
+  p=s.split(",")
+  for i in range(len(p)):
+    if(p[i].isnumeric()):
+      sum+=int(p[i])
+      count+=1
+    else:
+      counte+=1
+      if(counte==len(p)):
+        return 0.0
+  l=sum/count
+  return l
 
 print(fun_getaverage("13,excused,14,absent"))
 
