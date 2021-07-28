@@ -9,6 +9,11 @@
 
 
 
-def fun_getaverage(s): 
-	return 0.0
+def fun_getaverage(s):
+  k=len(s)
+  sum=0
+  p=list(s)
+  return p
+
+print(fun_getaverage("13,excused,14,absent"))
 
