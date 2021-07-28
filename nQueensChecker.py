@@ -4,3 +4,5 @@
 def nQueensChecker(a):
     # Your code goes here...
     pass
+
+#https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
