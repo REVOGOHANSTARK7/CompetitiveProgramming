@@ -6,5 +6,24 @@
 # fun_nth_tidynumber(15) = 17
 # fun_nth_tidynumber(35) = 46
 
+def tidyprop(x):
+    x=abs(x)
+    std=10
+    while(x):
+        y=x%10
+        if(y>std):
+            return False
+        elif(std>=y):
+            std=y
+        x=x//10
+    return True   
+
 def fun_nth_tidynumber(n):
-    return 0
+    found=0
+    got=0
+    while(found<=n):
+        got+=1
+        if(tidyprop(got)):
+            found+=1
+    return got
+    
