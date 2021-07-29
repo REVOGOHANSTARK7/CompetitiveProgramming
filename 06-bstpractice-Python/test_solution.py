@@ -3,7 +3,7 @@ sys.path.append(os.getcwd())
 from bst import BST, Node
 import pytest
 
-tree = BST(4)
+tree=BST(4)
 
 @pytest.mark.parametrize('check,result',[
     (tree.search(4), True), (tree.search(6), False)
