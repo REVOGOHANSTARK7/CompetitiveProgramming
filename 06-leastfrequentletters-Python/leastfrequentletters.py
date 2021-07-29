@@ -8,5 +8,13 @@
 # if s does not contain any alphabetic characters, the result should be the empty string ("")
 
 def leastfrequentletters(s):
-	# Your code goes here
-	pass
+  k=s.lower()
+  empty=''
+  setof='abcdefghijklmnopqrstuvwxyz'
+  for l in setof:
+    total=0
+    if l in k:
+      total=k.count(l)
+    if(total==1):
+      empty+=l
+  return empty
