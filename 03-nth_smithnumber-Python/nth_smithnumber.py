@@ -9,6 +9,58 @@
 
 import math
 
+def isprime(n):
+    if(n==2):
+        return True
+    elif(n%2==0 or n<2):
+        return False
+    for i in range(3,int(math.sqrt(n))+1,2):
+        if(n%i==0):
+            return False
+    return True
+    
+def SumOfDigits(n):
+    if(n<10):
+        return n
+    else:
+        return n%10+SumOfDigits(n//10)
+
+def issmith(n):
+    Digits=SumOfDigits(n)
+    Factors=0
+    i=2
+    while(i*i<=n):
+        if(n%i!=0):
+            i+=1
+        else:
+            n//=i
+            Factors+=SumOfDigits(i)
+    return Digits==Factors+SumOfDigits(n)
+
+def fun_nth_smithnumber(n):
+    found=-1
+    got=0
+    while(found<=n):
+        got+=1
+        if(issmith(got) and isprime(got)==False):
+            found+=1
+    return got
+
+# print(fun_nth_smithnumber(0))
+# print(fun_nth_smithnumber(1))
+# print(fun_nth_smithnumber(2))
+# print(fun_nth_smithnumber(3))
+# print(fun_nth_smithnumber(4))
+# print(fun_nth_smithnumber(5))
+# print(fun_nth_smithnumber(6))
+# print(fun_nth_smithnumber(7))
+# print(fun_nth_smithnumber(8))
+# print(fun_nth_smithnumber(9))
+# print(fun_nth_smithnumber(10))
+# print(fun_nth_smithnumber(11))
+# print(fun_nth_smithnumber(12))
+
+
 # def dgtsm(k):
 #     l=0
 #     while(k>0):
@@ -72,39 +124,3 @@ import math
 #         if(smithy(got)):
 #             found+=1
 #     return got
-
-def SumOfDigits(n):
-    return n if n<10 else n%10+SumOfDigits(n//10)
-
-def isSmith(n):
-    Digits=SumOfDigits(n)
-    Factors,i=0,2
-    while i*i<=n:
-        if n%i:i+=1
-        else:
-            n//=i
-            Factors+=SumOfDigits(i)
-    return Digits==Factors+SumOfDigits(n)
-
-def fun_nth_smithnumber(n):
-    found=-1
-    got=0
-    while(found<=n):
-        got+=1
-        if(isSmith(got)):
-            found+=1
-    return got
-
-print(fun_nth_smithnumber(0))
-print(fun_nth_smithnumber(1))
-print(fun_nth_smithnumber(2))
-print(fun_nth_smithnumber(3))
-print(fun_nth_smithnumber(4))
-print(fun_nth_smithnumber(5))
-print(fun_nth_smithnumber(6))
-print(fun_nth_smithnumber(7))
-print(fun_nth_smithnumber(8))
-print(fun_nth_smithnumber(9))
-print(fun_nth_smithnumber(10))
-print(fun_nth_smithnumber(11))
-print(fun_nth_smithnumber(12))
