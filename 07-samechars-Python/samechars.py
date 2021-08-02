@@ -5,6 +5,16 @@
 # case-sensitive, so "ABC" and "abc" do not contain the same characters. The function returns False if either 
 # parameter is not a string, but returns True if both strings are empty (why?).
 
+def reversing(s):
+  return s[::-1]
+
 def samechars(s1, s2):
-	# Your code goes here
-	pass
+  if(type(s1)!=type('the') or type(s2)!=type('the')):
+    return  False
+  elif(s1[:]==s2[:]):
+    return True
+  elif(s1.count(s2)>0 or reversing(s1).count(s2)>0):
+    return True
+  else:
+    return False
+
