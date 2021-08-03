@@ -31,7 +31,7 @@ def circular(n):
   return False
   
 def nthcircularprime(n):
-  found=1
+  found=0
   got=0
   while(found<=n):
     got+=1
@@ -39,3 +39,4 @@ def nthcircularprime(n):
       found+=1
   return got
 
+print(nthcircularprime(0))
