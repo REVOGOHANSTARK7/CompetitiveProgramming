@@ -23,6 +23,7 @@ Thus, in this example, friendsOfFriends should return:
  'ramsay': set()
 }
 '''
+
 def readDict():
     a = {}
     n = int(input())
@@ -41,7 +42,24 @@ def friendsOfFriends(d):
         new[i]=new[i]-set([i])
     d=new
     return(d)
-d = friendsOfFriends(readDict())
 
-for i in sorted(d.keys()):
-    print(i, sorted(d[i]))
+
+
+assert(friendsOfFriends({
+            "jon": set(["arya", "tyrion"]),
+            "tyrion": set(["jon", "jaime", "pod"]),
+            "arya": set(["jon"]),
+            "jaime": set(["tyrion", "brienne"]),
+            "brienne": set(["jaime", "pod"]),
+            "pod": set(["tyrion", "brienne", "jaime"]),
+            "ramsay": set()
+        })=={
+            'tyrion': {'arya', 'brienne'}, 
+            'pod': {'jon'}, 
+            'brienne': {'tyrion'}, 
+            'arya': {'tyrion'}, 
+            'jon': {'pod', 'jaime'}, 
+            'jaime': {'pod', 'jon'}, 
+            'ramsay': set()
+        })
+print("All tests passed.............")
