@@ -4,5 +4,17 @@
 # ('c', 'a', 'b'), ('c', 'b', 'a')]
 
 def getallpermutations(x):
-	# Your code goes here
-	pass
+  if(len(x)==0):
+    return []
+  elif(len(x)==1):
+    return x
+  l=[]
+  for i in range(len(x)):
+    s=tuple(x[i])
+    rem=x[:i]+x[i+1:]
+    for j in getallpermutations(rem):
+      j=tuple(j)
+      t=s+j
+      l.append(t)
+  return l
+
