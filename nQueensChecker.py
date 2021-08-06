@@ -5,7 +5,36 @@
 # N queens all of which do not attack any others, and False otherwise.
 
 def nQueensChecker(a):
-    # Your code goes here...
-    pass
+    for i in range(len(a)):
+        if(a[i].count(True)!=1):
+            return False
+    for j in range(len(a[i])):
+        temp=[]
+        for k in range(len(a[i])):
+            temp.append(a[k][j])
+        if(temp.count(True)!=1):
+            return False
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if(a[i][j]==True):
+                x=i
+                y=j
+                while(x!=len(a)-1 and y!=len(a)-1):
+                    if(a[x][y]==True  and x!=i and y!=j):
+                        return False
+                    x+=1
+                    y+=1
+                while(x!=len(a)-1 and y!=0):
+                    if(a[x][y]==True  and x!=i and y!=j):
+                        return False
+                    x+=1
+                    y-=1
+    return  True
+                    
+                    
+assert(nQueensChecker([[False,True,False,False],[False,False,False,True],[True,False,False,False],[False,False,True,False]])==True)
+assert(nQueensChecker([[False,True,False,False],[False,False,False,False],[True,False,False,False],[False,False,False,False]])==False)
+assert(nQueensChecker([[False,False,True,False],[True,False,False,False],[False,False,False,True],[False,True,False,False]])==True)
+print("All Test Cases Passed......")
 
 #https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
